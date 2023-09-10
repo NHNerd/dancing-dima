@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Dima dance</title>
+    <!-- <link rel="icon" href="./public/img/coffee.ico" type="image/x-icon" /> -->
+    <link rel="stylesheet" href="./public/style/style.css" />
+  </head>
+  <body>
+    <div id="container">
+      <div id="start">
+        <button type="button" id="start-button">Run Game</button>
+      </div>
+
+      <div id="header">
+        <div id="container-progres">
+          <div id="progress-bar">
+            <div class="inner"></div>
+          </div>
+          <div class="num">0/100</div>
+        </div>
+      </div>
+
+      <div id="main">
+        <div id="container-danila">
+          <div id="game-name">
+            dancing<br />
+            Dima
+          </div>
+          <div id="container-disco">
+            <dv class="light"></dv>
+            <div id="disco-ball"></div>
+          </div>
+
+          <div id="money"></div>
+          <div class="shake-wrap">
+            <div id="danila" alt="Анимация" loop></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="footer">
+        <div id="user-dialog">
+          <div class="user-answer1">A. Дай денег.</div>
+          <div class="user-answer2">B. Чувак, можешь стацевать?</div>
+          <div class="user-answer3">C. Сделай флип!.</div>
+        </div>
+        <div id="container-dialog">
+          <div class="dialog-window">Я сказал! Я не буду этого делать.</div>
+          <div class="shake-wrap">
+            <div id="dialog-face"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="./public/js/index.js"></script>
+  </body>
+</html>

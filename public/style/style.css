@@ -1,0 +1,462 @@
+@font-face {
+  font-family: 'Peepo';
+  src: url('../font/PublicPixel.ttf');
+}
+
+* {
+  user-select: none;
+  padding: 0;
+  margin: 0;
+  font-family: 'Peepo';
+  line-height: 1.5;
+  -webkit-tap-highlight-color: transparent; /* Для браузеров на основе WebKit, таких как Safari & Chrome */
+  overscroll-behavior: none; /* off down swipe refrash */
+}
+
+#container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgb(18, 18, 18);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+#header {
+  flex: 10%;
+  opacity: 0;
+  /* border: dashed 2px rgb(86, 139, 86);
+  box-sizing: border-box; */
+  transition: 0.25s;
+}
+
+#main {
+  flex: 70%;
+  opacity: 0;
+  /* border: dashed 2px rgb(134, 130, 65);
+  box-sizing: border-box; */
+  transition: 0.25s;
+}
+
+#footer {
+  flex: 20%;
+  opacity: 0;
+  transition: 1s;
+  /* border: dashed 2px rgb(208, 39, 140);
+  box-sizing: border-box; */
+  animation: footerOpening 2s ease;
+}
+
+@keyframes footerOpening {
+  0% {
+    translate: 0 400px;
+  }
+
+  100% {
+    translate: 0 0;
+  }
+}
+
+#start {
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  margin: 5%;
+  background-image: url('../img/start-BG.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  transition: 1s;
+}
+
+#start-button {
+  position: absolute;
+  width: 46%;
+  height: 14vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* background-color: rgba(0, 0, 0, 0.753); */
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0.75) 50%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  border: dotted 1.2vw rgba(255, 192, 203, 0.8);
+  box-sizing: border-box;
+  border-radius: 18px;
+  font-size: 4vw;
+  color: pink;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 460px;
+  max-height: 180px;
+  backdrop-filter: blur(6px);
+  z-index: 3;
+  transition: 0.25s;
+  animation: start-button 2s linear infinite;
+}
+
+#start-button:hover {
+  /* background-color: pink; */
+  color: rgb(255, 221, 227);
+  transform: scale(1.05) translate(-47.5%, -47.5%);
+}
+
+@media (min-width: 1050px) {
+  #start-button {
+    font-size: 42px;
+  }
+}
+
+@keyframes start-button {
+  0% {
+    color: pink;
+  }
+  50% {
+    color: rgba(185, 9, 188, 0.5);
+  }
+  100% {
+    color: pink;
+  }
+}
+
+#game-name {
+  position: absolute;
+  right: 0;
+  rotate: 60deg;
+  padding-top: 26vw;
+  margin-right: -16vw;
+  color: pink;
+  text-shadow: 6px 4px 2px rgba(255, 255, 255, 1);
+  font-size: 8vw;
+  scale: 0;
+  opacity: 0;
+}
+
+@keyframes nameGame {
+  0% {
+    filter: blur(6px);
+    opacity: 0.4;
+    scale: 0;
+    rotate: 380deg;
+  }
+  25% {
+    filter: blur(0px);
+    opacity: 1;
+    scale: 1.1;
+    rotate: 50deg;
+  }
+  40% {
+    filter: blur(0px);
+    opacity: 1;
+    scale: 1;
+    rotate: 60deg;
+  }
+  80% {
+    filter: blur(0px);
+    opacity: 1;
+    scale: 1;
+    rotate: 60deg;
+  }
+
+  100% {
+    filter: blur(6px);
+    opacity: 0;
+    scale: 0;
+    rotate: 420deg;
+  }
+}
+
+#container-progres {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+
+#progress-bar {
+  position: relative;
+  flex: 70%;
+  margin: 0 5%;
+  top: 50%;
+  translate: 0 -50%;
+  border: solid 2px rgb(185, 9, 188);
+  border-bottom: solid 6px rgb(185, 9, 188);
+  border-right: solid 6px rgb(185, 9, 188);
+  height: 24px;
+
+  border-radius: 5px;
+}
+.inner {
+  position: absolute;
+  left: 0;
+  border: dashed 12px pink;
+  box-sizing: border-box;
+  height: 24px;
+  will-change: width;
+  border-radius: 2px;
+}
+
+.num {
+  position: relative;
+  padding: 0 10px;
+  flex: 30%;
+  /* background-color: rgb(86, 139, 86); */
+  font-size: 24px;
+  color: aliceblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#container-danila {
+  position: relative;
+  margin: 0 10%;
+  transform: translate(-5%, -0);
+  width: 90%;
+  height: 100%;
+  border: dashed 2px rgba(185, 9, 188, 0.6);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+#danila {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  height: 512px;
+  width: 512px;
+  background-repeat: no-repeat;
+  opacity: 0;
+}
+
+@media (max-height: 700px) {
+  #danila {
+    background-size: 70%;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+}
+
+.shake-wrap {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.shake-wrap-on:hover {
+  transform: scale(1.08);
+}
+
+.shake-wrap-on:active {
+  scale: 1;
+  rotate: 0deg;
+  animation: shakeDanila 0.3s ease;
+}
+
+@keyframes shakeDanila {
+  0% {
+    scale: 1;
+    rotate: 0deg;
+  }
+  20% {
+    scale: 1.1;
+    rotate: -5deg;
+  }
+  40% {
+    scale: 1;
+    rotate: 5deg;
+  }
+  60% {
+    scale: 1.1;
+    rotate: -5deg;
+  }
+  80% {
+    rotate: 5deg;
+  }
+  100% {
+    scale: 1.1;
+    rotate: 0deg;
+  }
+}
+
+@keyframes dance {
+  0% {
+    background-position: 0 0px;
+  }
+  100% {
+    background-position: 1152px 0px;
+  }
+}
+@keyframes relax {
+  0% {
+    background-position: 0 -640px;
+  }
+  100% {
+    background-position: 1152px -640px;
+  }
+}
+@keyframes coffee {
+  0% {
+    background-position: 0 -768px;
+  }
+  100% {
+    background-position: 1152px -768px;
+  }
+}
+@keyframes cigarette {
+  0% {
+    background-position: 0 -896px;
+  }
+  100% {
+    background-position: 1152px -896px;
+  }
+}
+
+#user-dialog {
+  position: absolute;
+  /* translate: 0 -150px; */
+  height: 128px;
+  /* width: 80%; */
+  left: 8vw;
+  right: 8vw;
+  bottom: 32vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  border: dashed 2px pink;
+  color: white;
+  padding-top: 10px;
+  padding-left: 20px;
+  transition: 0.25s;
+}
+
+.user-answer1,
+.user-answer2,
+.user-answer3 {
+  position: relative;
+  margin-bottom: 8px;
+  opacity: 0.8;
+}
+.user-answer1:hover,
+.user-answer2:hover,
+.user-answer3:hover {
+  scale: 1.1;
+  translate: 20px 0;
+  opacity: 1;
+}
+
+#container-dialog {
+  position: relative;
+  top: 50%;
+  translate: 0 -50%;
+  height: 128px;
+  margin: 0 4%;
+  width: 92%;
+  border: dashed 8px rgb(185, 9, 188);
+  border-top: solid 4px rgba(185, 9, 188, 0.6);
+  border-bottom: dashed 6px rgb(185, 9, 188);
+  border-radius: 20px 60px 0 0;
+}
+
+#dialog-face {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 210px;
+  width: 180px;
+  /* border: solid 6px rgb(255, 0, 43); */
+  background-image: url('../img/photo.png');
+  background-repeat: no-repeat;
+  background-size: 170%;
+  background-position: -56px -20px;
+}
+
+.dialog-window {
+  font-size: 18px;
+  position: fixed;
+  left: 190px;
+  right: 14px;
+  top: 10px;
+  bottom: 10px;
+  border: dashed 2px pink;
+  border-radius: 0 36px 0 0;
+  color: white;
+  padding: 10px;
+}
+
+@media (max-width: 750px) {
+  #dialog-face {
+    height: 128px;
+    width: 128px;
+    background-size: cover;
+    background-position: 0 30px;
+    translate: 20px -104%;
+  }
+  .dialog-window {
+    left: 14px;
+  }
+}
+
+#container-disco {
+  translate: 0 -120px;
+  transition: 3s;
+}
+
+#money {
+  position: absolute;
+
+  height: 100%;
+  width: 100%;
+  background-size: 125vh;
+  opacity: 0;
+  z-index: 0;
+  transition: 5s;
+}
+
+#disco-ball {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 110px;
+  height: 110px;
+  background-image: url('../img/discoBall.gif');
+  background-repeat: no-repeat;
+  background-size: 118%;
+  background-position: -12px 0;
+  z-index: 10;
+}
+.light {
+  position: absolute;
+  left: 50%;
+  translate: -50% -37%;
+  width: 512px;
+  height: 512px;
+  scale: 0.2;
+
+  background-image: url('../img/light2.png');
+  background-repeat: no-repeat;
+  animation: light 9s linear infinite;
+  opacity: 0;
+}
+.light-opacity {
+  opacity: 30%;
+  scale: 2;
+  transition: 6s;
+}
+
+@keyframes light {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}

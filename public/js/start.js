@@ -23,10 +23,12 @@ startbButtonDOM.addEventListener('mousedown', (e) => {
   clickMusic();
   startDOM.style.filter = 'blur(120px)';
   startDOM.style.opacity = 0;
+  danilaDOM.style.backgroundImage = "url('./public/img/start.gif')";
 
   // opening game
   setInterval(() => {
     mainDOM.style.opacity = 1;
+    mainDOM.style.pointerEvents = 'auto';
     danilaDOM.style.opacity = 1;
 
     setInterval(() => {
@@ -38,13 +40,16 @@ startbButtonDOM.addEventListener('mousedown', (e) => {
 gameNameDOM.addEventListener('animationend', function () {
   danilaDOM.style.backgroundImage = "url('./public/img/idel-breath.gif')";
   footerDOM.style.opacity = 1;
-
+  footerDOM.style.pointerEvents = 'auto';
+  footerDOM.style.animation = 'footerOpening 1.5s ease-in';
   dialogWindowDOM.textContent = 'Йо';
 });
 
 userAnswer2DOM.addEventListener('mousedown', (e) => {
   clickMusic();
   dialogWindowDOM.textContent = 'А ты попробуй меня заставь!';
+
+  danilaDOM.style.cursor = 'pointer';
   headerDOM.style.opacity = 1;
   gameStarted = true;
 

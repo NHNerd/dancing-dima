@@ -15,7 +15,9 @@ export function progressBar(danilaDOM) {
   if (clickCounter === count && !bratheToDance) {
     winMusic();
     win = true;
+    numDOM.style.animation = 'musicFlex 0.55s infinite';
     shakeWrapDOM.classList.remove('shake-wrap-on');
+    danilaDOM.style.cursor = 'none';
     discoBall();
     danilaDOM.style.backgroundImage = "url('./public/img/bratheToDance.gif')";
     setTimeout(function () {

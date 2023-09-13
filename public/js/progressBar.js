@@ -9,10 +9,10 @@ const equalizerDOM = document.getElementById('equalizer');
 let clickCounter = 0;
 let win = false;
 let bratheToDance = false;
-const count = 100;
+const count = 1500;
 
 export function progressBar(danilaDOM) {
-  clickCounter = Math.min(count, clickCounter + 100);
+  clickCounter = Math.min(count, clickCounter + 1);
   if (clickCounter === count && !bratheToDance) {
     winMusic();
     win = true;

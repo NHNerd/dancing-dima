@@ -24,9 +24,14 @@ const randomSoundWin = Math.floor(Math.random(2) * soundsWin.length);
 const phonk = new Audio(soundsWin[randomSoundWin]);
 const click = new Audio('./public/sound/menu/click.mp3');
 const hover = new Audio('./public/sound/menu/najatie-na-kompyuternuyu-knopku1.mp3');
+const opening = new Audio('./public/sound/opening.mp3');
 
 export function winMusic() {
   phonk.play();
+}
+
+export function openingMusic() {
+  opening.play();
 }
 
 export function smashMusic() {

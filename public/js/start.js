@@ -1,4 +1,4 @@
-import { clickMusic } from './sound.js';
+import { clickMusic, openingMusic } from './sound.js';
 
 const startbButtonDOM = document.getElementById('start-button');
 const startDOM = document.getElementById('start');
@@ -22,17 +22,19 @@ export function start() {
 
 startbButtonDOM.addEventListener('mousedown', (e) => {
   clickMusic();
+
   startDOM.style.filter = 'blur(120px)';
   startDOM.style.opacity = 0;
   danilaDOM.style.backgroundImage = "url('./public/img/start.gif')";
 
   // opening game
-  setInterval(() => {
+  setTimeout(() => {
+    openingMusic();
     mainDOM.style.opacity = 1;
     mainDOM.style.pointerEvents = 'auto';
     danilaDOM.style.opacity = 1;
 
-    setInterval(() => {
+    setTimeout(() => {
       gameNameDOM.style.animation = 'nameGame 3.5s ease';
     }, 8500);
   }, 1000);

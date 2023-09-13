@@ -1,6 +1,6 @@
 import { phrasesMonyNot } from './speech.js';
 import { clickMusic } from './sound.js';
-const moneyDOM = document.getElementById('money');
+equalizer;
 const userDialogDOM = document.getElementById('user-dialog');
 const userAnswer1DOM = document.querySelector('.user-answer1');
 const dialogWindowDOM = document.querySelector('.dialog-window');

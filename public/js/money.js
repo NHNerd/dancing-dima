@@ -10,13 +10,14 @@ export function moneyHandler() {
 }
 
 function xxx() {
-  //TODO fix sound when mony raining
   clickMusic();
   if (Math.random(3) > 0.9) {
     moneyDOM.style.backgroundImage = "url('./public/img/raining-money-money.gif')";
     moneyDOM.style.opacity = 1;
     userDialogDOM.style.opacity = 0;
-    userDialogDOM.style.cursor = 'none';
+    setTimeout(() => {
+      userDialogDOM.style.display = 'none';
+    }, 200);
 
     dialogWindowDOM.textContent = 'Ладно';
     userAnswer1DOM.removeEventListener('mousedown', xxx);
@@ -24,8 +25,11 @@ function xxx() {
     setTimeout(() => {
       moneyDOM.style.opacity = 0;
       setTimeout(() => {
-        userDialogDOM.style.opacity = 1;
-        userDialogDOM.style.cursor = 'auto';
+        setTimeout(() => {
+          userDialogDOM.style.opacity = 1;
+        }, 200);
+
+        userDialogDOM.style.display = 'block';
       }, 1000);
 
       userAnswer1DOM.addEventListener('mousedown', xxx);

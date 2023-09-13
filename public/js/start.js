@@ -2,9 +2,9 @@ import { clickMusic } from './sound.js';
 
 const startbButtonDOM = document.getElementById('start-button');
 const startDOM = document.getElementById('start');
-const headerDOM = document.getElementById('header');
-const mainDOM = document.getElementById('main');
-const footerDOM = document.getElementById('footer');
+const headerDOM = document.querySelector('header');
+const mainDOM = document.querySelector('main');
+const footerDOM = document.querySelector('footer');
 const danilaDOM = document.getElementById('danila');
 const gameNameDOM = document.getElementById('game-name');
 const dialogWindowDOM = document.querySelector('.dialog-window');
@@ -13,6 +13,7 @@ const userDialogDOM = document.getElementById('user-dialog');
 const shakeWrapDOM = document.querySelector('.shake-wrap');
 
 let gameStarted = false;
+let shakeWrapOnDOM = 0;
 
 export function start() {
   containerDiscoDOM.style.translate = '0 0';
@@ -43,6 +44,7 @@ gameNameDOM.addEventListener('animationend', function () {
   footerDOM.style.pointerEvents = 'auto';
   footerDOM.style.animation = 'footerOpening 1.5s ease-in';
   dialogWindowDOM.textContent = 'Йо';
+  //start
 });
 
 userAnswer2DOM.addEventListener('mousedown', (e) => {
@@ -55,6 +57,7 @@ userAnswer2DOM.addEventListener('mousedown', (e) => {
 
   userDialogDOM.style.display = 'none';
   shakeWrapDOM.classList.add('shake-wrap-on');
+  shakeWrapOnDOM = document.querySelector('.shake-wrap-on');
 });
 
-export { gameStarted };
+export { gameStarted, shakeWrapOnDOM };

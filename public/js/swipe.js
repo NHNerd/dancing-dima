@@ -1,8 +1,7 @@
 import { gameStarted } from './start.js';
+import { win } from './progressBar.js';
 
 const danilaDOM = document.getElementById('danila');
-
-// danilaDOM.style.backgroundImage = "url('./public/img/swipeL.gif')";
 
 let cursorPosDown = 0;
 let cursorPosUp = 0;
@@ -47,10 +46,15 @@ export function swipePC() {
     }
   });
 
-  // return Brath loop
+  // return Breath loop
   danilaDOM.addEventListener('animationend', function (event) {
     if (event.animationName === 'swipeLReturn' || event.animationName === 'swipeRReturn') {
-      danilaDOM.style.backgroundImage = "url('./public/img/idel-breath.gif')";
+      swipe = false;
+      if (!win) {
+        danilaDOM.style.backgroundImage = "url('./public/img/idel-breath.gif')";
+        return;
+      }
+      danilaDOM.style.backgroundImage = "url('./public/img/dance1.gif')";
     }
   });
 }
@@ -96,10 +100,14 @@ export function swipeMobile() {
     }
   });
 
-  // Возвращение к состоянию "идл" после анимации
+  // return Breath loop
   danilaDOM.addEventListener('animationend', function (event) {
     if (event.animationName === 'swipeLReturn' || event.animationName === 'swipeRReturn') {
-      danilaDOM.style.backgroundImage = "url('./public/img/idel-breath.gif')";
+      if (!win) {
+        danilaDOM.style.backgroundImage = "url('./public/img/idel-breath.gif')";
+        return;
+      }
+      danilaDOM.style.backgroundImage = "url('./public/img/dance1.gif')";
       swipe = false;
     }
   });

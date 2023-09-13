@@ -422,22 +422,20 @@ footer {
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0);
-  width: 110px;
-  height: 110px;
+  width: 90px;
+  height: 90px;
   background-image: url('../img/discoBall.gif');
   background-repeat: no-repeat;
   background-size: 118%;
-  background-position: -12px 0;
-  z-index: 10;
+  background-position: -10px 0;
 }
 .light {
   position: absolute;
   left: 50%;
-  translate: -50% -37%;
+  translate: -50% -39%;
   width: 512px;
   height: 512px;
   scale: 0.2;
-
   background-image: url('../img/light2.png');
   background-repeat: no-repeat;
   animation: light 9s linear infinite;
@@ -446,7 +444,7 @@ footer {
 .light-opacity {
   opacity: 30%;
   scale: 2;
-  transition: 6s;
+  transition: 14s;
 }
 
 @keyframes light {
@@ -543,4 +541,35 @@ footer {
   }
 }
 
+#container-equalizer {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  right: 40px;
+  box-sizing: border-box;
+  height: 200px;
+  translate: 0 -204px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+#equalizer {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  translate: 0 150px;
+  background-image: url('../img/equalizer.gif');
+}
 /** Footer section */
+
+@keyframes openEqualizer {
+  0% {
+    translate: 0 150px;
+  }
+
+  100% {
+    translate: 0 0;
+  }
+}

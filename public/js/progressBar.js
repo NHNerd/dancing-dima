@@ -30,7 +30,7 @@ export function progressBar(danilaDOM) {
     }, 6200);
     bratheToDance = true;
   }
-  progressBarDOM.style.width = `${clickCounter}%`;
+  progressBarDOM.style.width = `${Math.floor((clickCounter / count) * 100)}%`;
   numDOM.textContent = `${clickCounter}/${count}`;
   return win;
 }

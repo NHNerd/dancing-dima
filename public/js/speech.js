@@ -1,4 +1,5 @@
 const dialogWindowDOM = document.querySelector('.dialog-window');
+const userAnswer3DOM = document.querySelector('.user-answer3');
 
 const phrases = [
   'Я скзал! Я не буду это делать.',
@@ -41,3 +42,7 @@ export const phrasesMonyNot = [
   'Я все потратил на supreme, извини.',
   'Откуда я их возьму?',
 ];
+
+userAnswer3DOM.addEventListener('mousedown', (e) => {
+  dialogWindowDOM.textContent = 'Эта опция на стадии разарботки. Выбери другю.';
+});

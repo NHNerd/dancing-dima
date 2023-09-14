@@ -5,6 +5,7 @@ const progressBarDOM = document.querySelector('.inner');
 const numDOM = document.querySelector('.num');
 const shakeWrapDOM = document.querySelector('.shake-wrap');
 const equalizerDOM = document.getElementById('equalizer');
+const credits = document.getElementById('credits');
 
 let clickCounter = 0;
 let win = false;
@@ -15,6 +16,10 @@ export function progressBar(danilaDOM) {
   clickCounter = Math.min(count, clickCounter + 1);
   if (clickCounter === count && !bratheToDance) {
     winMusic();
+    winMusic.addEventListener('ended', function () {
+      credits.style.opacity = 1;
+      console.log('Game over');
+    });
     win = true;
     numDOM.style.animation = 'musicFlex 0.55s infinite';
     shakeWrapDOM.classList.remove('shake-wrap-on');

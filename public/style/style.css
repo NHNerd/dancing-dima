@@ -165,6 +165,25 @@ footer {
 }
 /** Start section */
 
+/** Start section */
+#credits {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  font-size: 36px;
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 11;
+  transition: 8s;
+  opacity: 0;
+  pointer-events: none;
+  user-select: none;
+}
+/** Start section */
+
 /** Header section */
 #container-progres {
   position: relative;
@@ -348,23 +367,11 @@ footer {
   }
 }
 
-@media (max-height: 760px) {
-  #danila {
-    background-size: 80%;
-
-    background-repeat: no-repeat;
-  }
-}
-@media (max-height: 580px) {
-  #danila {
-    background-size: 65%;
-  }
-}
-
 .shake-wrap {
   position: relative;
   height: 100%;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .shake-wrap-on:hover {
@@ -571,5 +578,22 @@ footer {
 
   100% {
     translate: 0 0;
+  }
+}
+
+@media (max-height: 760px) {
+  #danila {
+    background-size: 80%;
+  }
+  .dialog-window {
+    font-size: 16px;
+  }
+}
+@media (max-height: 580px) {
+  #danila {
+    background-size: 65%;
+  }
+  .dialog-window {
+    font-size: 14px;
   }
 }

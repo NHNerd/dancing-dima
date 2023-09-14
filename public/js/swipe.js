@@ -63,13 +63,16 @@ export function swipePC() {
 export function swipeMobile() {
   let touchStartX = 0;
   let touchEndX = 0;
+  let touchesCount = 0;
 
   danilaDOM.addEventListener('touchstart', (e) => {
-    touchStartX = e.touches[0].clientX;
+    touchStartX = e.touches[e.touches.length - 1].clientX;
+    touchesCount = e.touches.length;
   });
 
   danilaDOM.addEventListener('touchend', (e) => {
-    touchEndX = e.changedTouches[0].clientX;
+    // WorkAround now swipe don't working in time multiple touches be ERROR :)
+    touchEndX = e.changedTouches[touchesCount - 1].clientX;
 
     if (touchEndX > touchStartX + 160 && !swipe && gameStarted) {
       // Обработка свайпа вправо

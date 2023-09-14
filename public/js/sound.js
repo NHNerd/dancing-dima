@@ -1,3 +1,5 @@
+const credits = document.getElementById('credits');
+
 //* Need full path
 const soundsWin = [
   './public/sound/beautiful-girl-129417.mp3',
@@ -28,6 +30,10 @@ const opening = new Audio('./public/sound/opening.mp3');
 
 export function winMusic() {
   phonk.play();
+  phonk.addEventListener('ended', function () {
+    credits.style.opacity = 1;
+    console.log('Game over');
+  });
 }
 
 export function openingMusic() {

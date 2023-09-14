@@ -4,6 +4,7 @@ equalizer;
 const userDialogDOM = document.getElementById('user-dialog');
 const userAnswer1DOM = document.querySelector('.user-answer1');
 const dialogWindowDOM = document.querySelector('.dialog-window');
+const moneyDOM = document.getElementById('money');
 
 export function moneyHandler() {
   userAnswer1DOM.addEventListener('mousedown', xxx);
